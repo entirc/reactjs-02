@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Radium</title>
+</head>
+
+<link href="css/estilo.css" rel="stylesheet" type="text/css"/>
+
+<body>
+    <h1>ENTI - Aprendendo React #2</h1>
+
+    <h2>Biblioteca</h2>
+    <a href="https://formidable.com/open-source/radium/" target="_">Radium</a>
+    
+    <h2>Exemplos</h2>
+    <a href="https://egghead.io/lessons/react-styling-a-react-button-component-with-radium" target="_">React Styling a React Button Component with Radium</a>
+    <br/><br/>
+    <div id="conteudo"></div>
+</body>
+
+<!--React v15.6.1 -->
+<script src="js/vendors/react.js"></script>
+<script src="js/vendors/react-dom.js"></script>
+<script src="js/vendors/babel-core-5.8.38.js"></script>
+<script src="js/vendors/radium.js"></script>
+<script src="js/vendors/tinycolor2-1.4.1.js"></script>
+
+<script type="text/babel">
+
+const style = {
+  backgroundColor: '#07d',
+  border: 'none',
+  borderRadius: 4,
+  color: '#fff',
+  padding: '5px 20px',
+  ':hover':{
+    backgroundColor:'green'
+  }
+}
+
+const ButtonSR = ({children}) => (
+  <button style={style}>
+    {children}
+  </button>
+)
+
+const ButtonCR = Radium(({children}) => (
+  <button style={style}>
+    {children}
+  </button>
+))
+
+
+const HOT_PINK = '#ff69b4'
+
+const styles = {
+  button: createButtonStyle(HOT_PINK)
+}
+
+let createButtonStyle = Radium((color) =>{
+  const isLight = tinycolor(color).isLight()
+
+  return{
+    backgroundColor: color
+    color: isLight ? 'black' : 'white'
+    borderRadius: 2px,
+
+    ':hover':{
+      backgroundColor: tinycolor(color).darken(15).toString()
+    }
+  }
+})
+
+class FabulousButton extends React.Component{
+  render(){
+    return(
+      <button style={styles.button}>I am fabulous</button>
+    )
+  }
+}
+
+
+let destino = document.querySelector("#conteudo")
+
+ReactDOM.render(
+    <div>
+        <ButtonSR >Sem Radium</ButtonSR>&nbsp;
+        <ButtonCR >Com Radium</ButtonCR>
+    </div>,destino
+)
+
+</script>
+
+</html>

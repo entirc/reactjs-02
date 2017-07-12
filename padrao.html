@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Modelo Padrão</title>
+</head>
+
+<link href="css/estilo.css" rel="stylesheet" type="text/css"/>
+
+<body>
+    <h1>ENTI - Aprendendo React #2</h1>
+
+    <div id="conteudo"></div>
+</body>
+
+<!--React v15.6.1 -->
+<script src="js/vendors/react.js"></script>
+<script src="js/vendors/react-dom.js"></script>
+<script src="js/vendors/babel-core-5.8.38.js"></script>
+
+<script type="text/babel">
+
+
+let MyNotification = React.createClass({
+  render: function(){
+        return (
+            <h1>Teste</h1>
+        )
+  }
+
+})
+
+
+/*
+class MyNotification extends React.Component{
+  render () {
+        return (
+            <h1>Teste</h1>
+        )
+  }
+}
+
+*/
+
+
+let destino = document.querySelector("#conteudo")
+
+ReactDOM.render(
+    <div>
+        <MyNotification />
+    </div>,destino
+)
+
+</script>
+
+</html>

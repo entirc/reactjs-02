@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aprendendo React #2</title>
+</head>
+    <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
+<body>
+    <h1>ENTI - Aprendendo React #2</h1>
+    <h2>Bibliotecas</h2>
+    <a href="https://github.com/facebook/react/releases" target="_">React e React-DOM</a>
+    <br/>
+    <a href="https://cdnjs.com/libraries/babel-core/5.8.38" target"_">Babel-Core</a>
+
+    <h2>Transpilers</h2>
+    <p>
+        Transpilers, or source-to-source compilers, are tools that read 
+        source code written in one programming language, and produce the 
+        equivalent code in another language. Languages you write that 
+        transpile to JavaScript are often called compile-to-JS languages, 
+        and are said to target JavaScript. 
+        Fonte: <a href="https://scotch.io/tutorials/javascript-transpilers-what-they-are-why-we-need-them" target="_">JavaScript Transpilers: What They Are & Why We Need Them</a>
+    </p>
+    <p>
+        Compiling is the general term for taking source code written in 
+        one language and transforming into another.
+
+        Transpiling is a specific term for taking source code written in 
+        one language and transforming into another language that has a 
+        similar level of abstraction. 
+        Fonte: <a href="https://www.stevefenton.co.uk/2012/11/compiling-vs-transpiling/" target="_">COMPILING VS TRANSPILING</a>
+    </p>
+
+    <h2>Update o React</h2>
+    <img src="img/warningReact.png" alt="aviso de código descontinuado"/>
+    <br/>
+    <a href="https://facebook.github.io/react/blog/2017/04/07/react-v15.5.0.html#migrating-from-react.createclass" target="_">Migrating from React.createClass</a>
+    <br/>
+    <a href="https://daveceddia.com/convert-createclass-to-es6-class/" target="_">Convert React.createClass to ES6 Class</a>
+    
+    <p>Código que está no livro - Versão do React 15.3.2</p>
+    <img src="img/updateReact.png" alt="código que está no livro de react"/>
+    <p></p>
+
+    <img src="img/estiloReact.png" alt="Estilizando no React"/>
+
+    <img src="img/naoAdicionaPX.png" alt="Propriedades que o React não adiciona o sufixo px"/>
+
+    <div id="container"></div> 
+
+    <br/>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/LKDPaxXZjxc" frameborder="0" allowfullscreen></iframe>
+</body>
+    <!--React v15.6.1 -->
+    <script src="js/vendors/react.js"></script>
+    <script src="js/vendors/react-dom.js"></script>
+    <script src="js/vendors/babel-core-5.8.38.js"></script>
+
+    <script type="text/babel">
+
+        class Letter extends React.Component{
+            render(){
+               // console.log(this)
+               let letterStyle = {
+                   padding: 10,
+                   margin: 10,
+                   backgroundColor: this.props.bgcolor,
+                   color: "#333",
+                   display: "inline-block",
+                   fontFamily: "monospace",
+                   fontSize: 32,
+                   textAlign: "center",
+               }
+                return(
+                    <div style={letterStyle}>
+                        {this.props.children}
+                    </div>
+                )
+            }
+        }
+
+        let destination = document.querySelector("#container");
+
+        ReactDOM.render(
+            <div>
+                <Letter bgcolor="#58b3ff">A</Letter>
+                <Letter bgcolor="#ff605f">E</Letter>
+                <Letter bgcolor="#ffd52e">I</Letter>
+                <Letter bgcolor="#49dd8e">O</Letter>
+                <Letter bgcolor="#ae99ff">U</Letter>
+            </div>,destination
+        )
+    </script>
+</html>

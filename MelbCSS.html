@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Glen Maddern - Styling React Apps with Styled Components</title>
+</head>
+  <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
+<body>
+    <h1>ENTI - Aprendendo React #2</h1>
+    <br/>
+    <div id="conteudo"></div>
+
+    <h2>Exemplo</h2>
+    <a href="https://codepen.io/kentcdodds/pres/MpxMge" target="_">Utilizando o styled-components</a>
+    <br/><br/>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/qu4U7lwZTRI" frameborder="0" allowfullscreen></iframe>
+</body>
+    <!--React v15.6.1 -->
+    <script src="js/vendors/react.js"></script>
+    <script src="js/vendors/react-dom.js"></script>
+    <script src="js/vendors/babel-core-5.8.38.js"></script>
+    <!-- https://github.com/styled-components/styled-components -->
+    <script src="js/vendors/styled-components.js"></script>
+
+
+<script type="text/babel">
+
+    window.styled = window.styled.default
+    
+    const Outer = styled.div`
+        text-align: center;
+        h3{
+            color: white;
+        }
+    `
+    const Paragrafos = styled.p`
+        color: green;
+        font-size: 25px;
+    `
+    const Logo = styled.img`
+        height: 100px;
+        border-radius:50%;
+    `
+    
+    let destination = document.querySelector("#conteudo");
+
+    ReactDOM.render(
+        <Outer>
+            <h1>ENTI</h1>
+            <Logo src="img/enti.jpeg" alt="Logo do ENTI" />
+            <Paragrafos>Ensine-me qualquer coisa sobre TI</Paragrafos>
+            <h3>Junte-se a nós</h3>
+        </Outer>,destination
+    )
+</script>
+
+</html>

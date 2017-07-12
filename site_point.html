@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quick Tip: How to Style React Components with styled-components</title>
+</head>
+    <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
+<body>
+    <h1>ENTI - Aprendendo React #2</h1>
+    <a href="https://www.sitepoint.com/style-react-components-styled-components/" target="_">Quick Tip: How to Style React Components with styled-components</a>
+    
+    <div id="conteudo"></div>
+
+
+</body>
+<!--React v15.6.1 -->
+<script src="js/vendors/react.js"></script>
+<script src="js/vendors/react-dom.js"></script>
+<script src="js/vendors/babel-core-5.8.38.js"></script>
+<script src="js/vendors/styled-components.js"></script>
+
+<script type="text/babel">
+
+window.styled = window.styled.default
+
+const BasicNotification = styled.p`
+    background: lightblue;
+    padding: 5px;
+    margin: 5px;
+    color: black;
+`
+const SuccessNotification = styled(BasicNotification)`
+    background: lightgreen;
+`
+const ErrorNotification = styled(BasicNotification)`
+    background: lightcoral;
+    font-weight: bold;
+`
+
+let destino = document.querySelector("#conteudo")
+
+ReactDOM.render(
+    <div>
+        <BasicNotification>Basic Message</BasicNotification>
+        <SuccessNotification>Success Message</SuccessNotification>
+        <ErrorNotification>Error Message</ErrorNotification>
+    </div>,destino
+)
+
+</script>
+
+</html>

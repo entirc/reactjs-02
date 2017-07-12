@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React JS Style Components</title>
+</head>
+    <!--Bootstrap v3.3.7 (http://getbootstrap.com) -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
+<body>
+    <div class="container">
+        <h1>ENTI - Aprendendo React #2</h1>
+        <br/>
+
+        <div id="conteudo"></div>
+
+        <br/>
+        <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/join" target="_">Array.prototype.join()</a>
+        <p></p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/gNeavlJ7lNY" frameborder="0" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/FqsmwOnlHmU" frameborder="0" allowfullscreen></iframe>
+    </div>
+</body>
+    <!--React v15.6.1 -->
+    <script src="js/vendors/react.js"></script>
+    <script src="js/vendors/react-dom.js"></script>
+    <script src="js/vendors/babel-core-5.8.38.js"></script>
+
+    <script type="text/babel">
+    
+        const Btn = ({className, ...props}) => {
+           /* console.log(className)
+            console.log(props)
+            console.log(props.href)*/
+            const Tag = props.href ? "a" : "button"
+            return <Tag target="_" type="button"
+            className={["btn", className].join(' ')} 
+            {...props}/>
+        }
+        
+        const PrimaryBtn = props => 
+            <Btn className="btn-primary" {...props}/>
+
+        const DangerBtn = props => 
+            <Btn className="btn-danger" {...props}/>
+
+        let destination = document.querySelector("#conteudo");
+
+        ReactDOM.render(
+            <div>
+                <PrimaryBtn href="https://www.youtube.com/channel/UCpq2_V-9AYYUHSsjoJZPUTg">Touch Me</PrimaryBtn>&nbsp;
+                <DangerBtn>Don't Touch Me</DangerBtn>
+            </div>,destination
+        )
+
+    </script>
+
+</html>
