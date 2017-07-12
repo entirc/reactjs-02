@@ -54,41 +54,55 @@ const ButtonCR = Radium(({children}) => (
 ))
 
 
-const HOT_PINK = '#ff69b4'
 
-const styles = {
-  button: createButtonStyle(HOT_PINK)
-}
-
-let createButtonStyle = Radium((color) =>{
-  const isLight = tinycolor(color).isLight()
-
-  return{
-    backgroundColor: color
-    color: isLight ? 'black' : 'white'
-    borderRadius: 2px,
-
-    ':hover':{
-      backgroundColor: tinycolor(color).darken(15).toString()
+var studentList = [
+    {name:"Sandeep", subject:"Physics", roll:4},
+    {name:"John", subject:"Chemistry", roll:1},
+    {name:"Smith", subject:"Physics", roll:2},
+    {name:"Ramesh", subject:"Chemistry", roll:3}
+];
+var styles = {
+    header: {
+        color: '#999',
+        ':hover':{
+            color:'#00f'
+        },
+        ':focus':{
+            color:'#f00'
+        },
+        ':active':{
+            color:'#000'
+        }
     }
-  }
-})
+};
 
-class FabulousButton extends React.Component{
-  render(){
-    return(
-      <button style={styles.button}>I am fabulous</button>
-    )
-  }
-}
+//@Radium não vai
+class StudentListComponent extends React.Component{
+    render() {
+        var results = this.props.results;
+        return (
+            <ol>
+                {studentList.map(function(student) {
+                    return <li  key={student.roll}>
+                        <a key={student.roll} style={[styles.header]}  href="#">
+                            {student.name}
+                        </a>
+                    </li>;
+                })}
+            </ol>
+        );
+    }
+};
 
+//StudentListComponent = Radium(StudentListComponent);
 
 let destino = document.querySelector("#conteudo")
 
 ReactDOM.render(
     <div>
         <ButtonSR >Sem Radium</ButtonSR>&nbsp;
-        <ButtonCR >Com Radium</ButtonCR>
+        <ButtonCR >Com Radium</ButtonCR><br/>
+        <StudentListComponent  />
     </div>,destino
 )
 
