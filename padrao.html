@@ -6,9 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Modelo Padrão</title>
 </head>
-
 <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
-
 <body>
     <h1>ENTI - Aprendendo React #2</h1>
 
@@ -22,7 +20,7 @@
 
 <script type="text/babel">
 
-
+/*
 let MyNotification = React.createClass({
   render: function(){
         return (
@@ -31,9 +29,10 @@ let MyNotification = React.createClass({
   }
 
 })
+*/
 
 
-/*
+
 class MyNotification extends React.Component{
   render () {
         return (
@@ -42,10 +41,9 @@ class MyNotification extends React.Component{
   }
 }
 
-*/
-
 
 let destino = document.querySelector("#conteudo")
+
 
 ReactDOM.render(
     <div>
@@ -53,6 +51,36 @@ ReactDOM.render(
     </div>,destino
 )
 
+
+/*
+Exemplo do livro React: Up & Running by Stonyan Stefanov
+//https://www.safaribooksonline.com/library/view/react-up/9781491931813/ch04.html#idm140144569524704
+*/
+
+/*
+ReactDOM.render(
+    React.DOM.h1(
+        {id: "my-heading"},
+        React.DOM.span(null, 
+                React.DOM.em(null, "Hell"), 
+            "o"
+        ), " World!"
+    ),
+    destino
+)
+*/
+
+/*
+ReactDOM.render(
+    React.DOM.h1(
+        {
+            style:{
+                background: "white"
+            }
+        }, "Hello World!"
+    ),destino
+)
+*/
 </script>
 
 </html>

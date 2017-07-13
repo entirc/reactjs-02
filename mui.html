@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mui</title>
+</head>
+<link href="css/mui.css" rel="stylesheet" type="text/css"/>
+<link href="css/estilo.css" rel="stylesheet" type="text/css"/>
+<body>
+    <h1>ENTI - Aprendendo React #2</h1>
+
+    <h2>Biblioteca</h2>
+    <a href="https://www.muicss.com/" target="_">Mui</a>
+    <br/>
+    <a href="https://cdnjs.com/libraries/muicss" target="_">Mui Download</a>
+    <br/><br/>
+
+    <div id="conteudo"></div>
+</body>
+
+<!--React v15.6.1 -->
+<script src="js/vendors/react.js"></script>
+<script src="js/vendors/react-dom.js"></script>
+<script src="js/vendors/babel-core-5.8.38.js"></script>
+<script src="js/vendors/mui-react.js"></script>
+
+<script type="text/babel">
+
+let Appbar = mui.react.Appbar,
+    Button = mui.react.Button,
+    Container = mui.react.Container,
+    Divider = mui.react.Divider,
+    DropDown = mui.react.Dropdown,
+    DropDownItem = mui.react.DropdownItem,
+    Input = mui.react.Input,
+    Textarea = mui.react.Textarea,
+    Form = mui.react.Form;
+
+class MyNotification extends React.Component{
+  render () {
+      let s1 = {verticalAlign: 'middle'};
+      let s2 = {textAlign: 'right'};
+      let divider = {backgroundColor: "white"};
+      let form = {backgroundColor: "white"};
+      
+        return (
+            <div>
+                <Appbar>
+                    <table width="100%">
+                        <tbody>
+                            <tr style={s1}>
+                                <td className="mui--appbar-height">Left Side</td>
+                                <td className="mui--appbar-height" style={s2}>Right Side</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </Appbar>
+                <br/>
+                <Divider style={divider}/>
+                <Container>
+                    <Button variant="fab">+</Button>
+                    <Button color="primary" variant="raised">button</Button>
+                    <Button color="danger" variant="flat" size="large">button</Button>
+                    <Button color="accent" disabled={true} size="small">button</Button>
+                    <Form style={form}>
+                        <legend>Title</legend>
+                        <Input label="Input 1"/>
+                        <Input hint="Input 2" floatingLabel={true} defaultValue="Value on load"/>
+                        <Textarea hint="Textarea"/>
+                        <Button variant="raised">Submit</Button>
+                    </Form>
+                </Container>
+            </div>
+        )
+  }
+}
+
+
+let destino = document.querySelector("#conteudo")
+
+
+ReactDOM.render(
+    <div>
+        <MyNotification />
+    </div>,destino
+)
+
+</script>
+
+</html>
