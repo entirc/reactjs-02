@@ -76,7 +76,7 @@ var styles = {
     }
 };
 
-//@Radium não vai
+//@Radium
 class StudentListComponent extends React.Component{
     render() {
         var results = this.props.results;
@@ -94,7 +94,7 @@ class StudentListComponent extends React.Component{
     }
 };
 
-//StudentListComponent = Radium(StudentListComponent);
+StudentListComponent = Radium(StudentListComponent);
 
 let destino = document.querySelector("#conteudo")
 

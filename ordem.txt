@@ -16,3 +16,41 @@ mui
 
 --Ex recharts
 recharts
+
+
+
+	
+Angelo Rogério Rubin	10:24
+https://jsx.github.io
+	
+Helton	10:25
+https://stackoverflow.com/questions/39461805/what-does-jsx-stand-for
+JavaScript XML
+	
+Angelo Rogério Rubin	10:28
+boa
+elton
+olha isso aqui do babel q massa
+https://babeljs.io/repl
+http://desenvolvimentoparaweb.com/css/unidades-css-rem-vh-vw-vmin-vmax-ex-ch
+MEDIDAS CSS
+MODERNAS
+	
+Helton	11:25
+var Radium = require('radium');
+https://developer.mozilla.org/en/docs/Web/CSS/Pseudo-classes
+Angelo Rogério Rubin saiu do bate-papo em grupo.
+Angelo Rogério Rubin entrou no bate-papo em grupo.
+	
+Angelo Rogério Rubin	11:42
+http://c3js.org
+	
+Helton	11:43
+https://d3js.org/
+Para listar todos os comandos disponíveis, insira "/?".
+	
+Helton	11:44
+https://github.com/d3/d3/wiki/Gallery
+https://www.google.com/webdesigner/
+https://webcode.tools/
+http://www.cssmatic.com/
